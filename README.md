@@ -1,6 +1,5 @@
-# Heart Disease Risk — EDA & Classification with SHAP
+# Heart Disease Risk - EDA & Classification with SHAP
 
-**Author:** Roshni Makwana  
 **Domain:** Healthcare / Medical  
 **Tools:** Python · scikit-learn · SHAP · Pandas · Seaborn · Matplotlib
 
@@ -8,7 +7,7 @@
 
 ## Problem Statement
 
-Heart disease is the leading cause of death globally. Early identification of at-risk patients enables preventive intervention. This project uses the **UCI Heart Disease dataset** (303 patients, 13 clinical features) to:
+Heart disease is the leading cause of death globally. Early identification of at risk patients enables preventive intervention. This project uses the **UCI Heart Disease dataset** (303 patients, 13 clinical features) to:
 
 1. Explore which patient features correlate with heart disease
 2. Build a Random Forest classifier to predict disease presence
@@ -20,7 +19,7 @@ Heart disease is the leading cause of death globally. Early identification of at
 
 | Detail | Value |
 |---|---|
-| Source | [UCI ML Repository — Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease) |
+| Source | [UCI ML Repository - Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease) |
 | Patients | 303 |
 | Features | 13 clinical + 1 target |
 | Target | Binary (0 = no disease, 1 = disease present) |
@@ -60,14 +59,14 @@ Raw Data → EDA → Feature Analysis → Train/Test Split → Random Forest →
 
 ### 2. Modelling
 - **Algorithm:** Random Forest (n=300 trees, balanced class weights)
-- **Validation:** 5-fold stratified cross-validation
+- **Validation:** 5 fold stratified cross-validation
 - **Metrics:** ROC-AUC, precision, recall, F1
 
 ### 3. Explainability (SHAP)
-- Beeswarm summary plot — direction + magnitude per feature
-- Bar chart — mean absolute SHAP (global importance)
-- Dependence plots — how top features interact
-- Force plot — single high-risk patient explanation
+- Beeswarm summary plot - direction + magnitude per feature
+- Bar chart - mean absolute SHAP (global importance)
+- Dependence plots - how top features interact
+- Force plot - single high-risk patient explanation
 
 ---
 
@@ -85,7 +84,7 @@ Raw Data → EDA → Feature Analysis → Train/Test Split → Random Forest →
 |---|---|
 | Chest Pain Type | Asymptomatic patients (cp=3) are paradoxically highest risk |
 | Max Heart Rate | Lower values strongly push prediction toward disease |
-| ST Depression | Near-linear SHAP increase — direct ischaemia marker |
+| ST Depression | Near-linear SHAP increase - direct ischaemia marker |
 | Major Vessels (ca) | More vessels = stronger disease signal |
 | Thalassemia | Reversible defect is the single strongest predictor |
 
@@ -143,10 +142,8 @@ ucimlrepo>=0.0.3
 
 ## Learnings & Next Steps
 
-- **SHAP makes ML transparent** — interpretability is critical in healthcare where trust matters
-- **Cholesterol was not the top predictor** — ST depression and max heart rate were more informative
+- **SHAP makes ML transparent** - interpretability is critical in healthcare where trust matters
+- **Cholesterol was not the top predictor** - ST depression and max heart rate were more informative
 - **Next steps:** Try LightGBM or XGBoost, add LIME comparison, deploy as a Streamlit risk calculator
 
 ---
-
-*Part of Roshni Makwana's data science portfolio — [roshni-makwana.github.io](https://roshni-makwana.github.io)*
